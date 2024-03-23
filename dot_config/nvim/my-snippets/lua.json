@@ -1,0 +1,14 @@
+{
+  "New Keybin Neovim Global": {
+    "prefix": ["keybind_new"],
+    "body": [
+      "map(\"${1:n}\", \"${2:Key}\", \"${3:command}\",  { desc = \"${4:description}\"})"
+    ],
+    "description": "add new keybind to neovim global"
+  },
+  "description": {
+    "prefix": ["des"],
+    "body": ["{ desc = \"$1\"}"],
+    "description": "description"
+  }
+}

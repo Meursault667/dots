@@ -1,0 +1,399 @@
+{
+  "main": {
+    "id": "cdbe65cb2b1a9c38",
+    "type": "split",
+    "children": [
+      {
+        "id": "01dddb3a9ef80b3a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e8282aefa07ad4f2",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2_JOURNAL/2024-03-23.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "280bacaa6145bb30",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "2024-03-23",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"2_JOURNAL/2024-03-23.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1_DOC/2023 doc Linux conf.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e21471b1311f6038",
+    "type": "split",
+    "children": [
+      {
+        "id": "aac290537b571de1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc8d382b2208a7e8",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "chezmoi",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8fcaa460650cd1f8",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "33752f63a68408c6",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "15fdf4773698a0d4",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "daily-note-outline",
+              "state": {
+                "activeSet": 0,
+                "activeGranularity": 0
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 368.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "70e197de2e4142c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "49e855be0a9111df",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cae9fd6d6a8741a4",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2_JOURNAL/2024-03-23.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ad789ad273fe8920",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2_JOURNAL/2024-03-23.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "84f376510236bbbb",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2da4175d3997c745",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          },
+          {
+            "id": "ed4762c435381b36",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2_JOURNAL/2024-03-23.md"
+              }
+            }
+          },
+          {
+            "id": "1a73b877a395bc15",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "time-ruler-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "611efa760ffe6728",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "reminder-list",
+              "state": {}
+            }
+          },
+          {
+            "id": "8fdbe5260eb760ef",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 7
+      }
+    ],
+    "direction": "horizontal",
+    "width": 347.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "zk-prefixer:Create new unique note": false,
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-daily-notes-opener:Open today's daily note in new pane": false,
+      "periodic-notes:Open today": false,
+      "obsidian-ocr:Search OCR": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "time-ruler:Open Time Ruler": false
+    }
+  },
+  "active": "e8282aefa07ad4f2",
+  "lastOpenFiles": [
+    "1_DOC/2023 doc Linux conf.md",
+    "2_JOURNAL/2024-03-23.md",
+    "2_JOURNAL/2023-12-21.md",
+    "2_JOURNAL/2_JOURNAL.md",
+    "1_DOC/templater.md",
+    "2_JOURNAL/2024-W12.md",
+    "2_JOURNAL/zz_attachments/Pasted image 20231008122132.png",
+    "2_JOURNAL/zz_attachments/Pasted image 20240104084234.png",
+    "2_JOURNAL/zz_attachments/Pasted image 20231102001903.png",
+    "2_JOURNAL/zz_attachments/Pasted image 20231025195931.png",
+    "2_JOURNAL/zz_attachments/Pasted image 20231025125731.png",
+    "2_JOURNAL/zz_attachments/Pasted image 20231024182911.jpg",
+    "2_JOURNAL/zz_attachments/Pasted image 20231019141101.png",
+    "2_JOURNAL/zz_attachments/Pasted image 20240104152104.png",
+    "2_JOURNAL/zz_attachments/Pasted image 20240305085405.png",
+    "2_JOURNAL/zz_attachments/Pasted image 20240104152619.png",
+    "2_JOURNAL/zz_attachments/2024-W12.excalidraw.md",
+    "2_JOURNAL/Untitled.md",
+    "broken links output.md",
+    "orphaned files output.md",
+    "0_CONF_BAC/0_CONF_BAC.md",
+    "0_CONF_BAC/00.06 morning.md",
+    "empty files.md",
+    "0_CONF_BAC/00_CONF_BAC.md",
+    "0_CONF_BAC/01.02 weekly.md",
+    "0_CONF_BAC/08.2-XXX Aufgaben/00.0-XXXX Aufgaben.md",
+    "0_CONF_BAC/08.2-XXX Aufgaben/00.00.5-XXXX Altklausuren/42.20.5-BUCH Altklausuren.md",
+    "0_CONF_BAC/06.04 aliases.md",
+    "2_JOURNAL/2024-01.md",
+    "2_JOURNAL/2024-03-21.md",
+    "mm_.canvas",
+    "3_TASKS/Scheduled Till Today.md",
+    "0_CONF_BAC/01.01 daily.md",
+    "2_JOURNAL/2024-03-22.md",
+    "2_JOURNAL/2024-03-09.md",
+    "2_JOURNAL/2023-11-26.md",
+    "2_JOURNAL/2023-11-25.md",
+    "linux canvas.canvas",
+    "8_RESSOURCES/81_Studys/Extrahiert1_L_Projektmanagement_WS1617_131016.pdf",
+    "8_RESSOURCES/82_Politik-Theorie/Zur Verteidigung der Traurigkeit.pdf",
+    "8_RESSOURCES/82_Politik-Theorie/89_Gelesen",
+    "8_RESSOURCES/82_Politik-Theorie/Lindner_Rien_ne_va_plus_W_Pohrts_Theorie.pdf",
+    "5_PRIVAT/34_Linux/vim-commands-cheat-sheet-by-pnap.pdf",
+    "03 Rechnungsabgrenzungen Jahresabschluss-note-2024-01-25-13-10-54-1.pdf",
+    "handwritten-notes/Bestandsänderungen-note-2024-01-18-11-36-47.pdf",
+    "36_INFO_withMarginNotes.pdf",
+    "4_STUDYS/42_UNI-BUCH_31011/42.0 Klausurvorbereitung/0Z Rezeptsammlung Jahresabschluss.pdf",
+    "handwritten-notes/03 Rechnungsabgrenzungen Jahresabschluss-note-2024-01-25-13-10-54-1.pdf"
+  ]
+}

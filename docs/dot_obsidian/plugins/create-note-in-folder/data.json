@@ -1,0 +1,27 @@
+{
+  "folder": [
+    {
+      "path": "00_CONF_BAC",
+      "commandName": "configtemplate",
+      "template": {
+        "type": "none",
+        "format": "",
+        "position": "append",
+        "separator": "",
+        "increment": true
+      },
+      "fileName": "Untitled",
+      "opening": "newTab",
+      "focused": true,
+      "splitDefault": "horizontal",
+      "alreadyExistOpening": {
+        "opening": "newTab",
+        "splitDefault": "horizontal",
+        "focused": true
+      },
+      "fileMenu": false
+    }
+  ],
+  "customVariables": [],
+  "timeOutForInlineTitle": 50
+}

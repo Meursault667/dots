@@ -1,0 +1,10 @@
+{
+  "pinned": [
+    "obsidian-minimal-settings:toggle-minimal-focus-mode",
+    "workspace:toggle-stacked-tabs",
+    "obsidian-full-calendar:full-calendar-open",
+    "obsidian-full-calendar:full-calendar-new-event",
+    "marginnote-companion:mn-insert2doc",
+    "marginnote-companion:mn-autopaste"
+  ]
+}

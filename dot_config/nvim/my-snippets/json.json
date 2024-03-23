@@ -1,0 +1,12 @@
+{
+  "Jump": {
+    "prefix": ["$"],
+    "body": ["${${1:1}:$2}"],
+    "description": "jumps for VScode snips"
+  },
+  "Ticks High": {
+    "prefix": ["\""],
+    "body": ["\"$1\\\""],
+    "description": "Highticks"
+  }
+}

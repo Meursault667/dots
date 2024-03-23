@@ -1,0 +1,14 @@
+{
+  "endOfDayTime": "05:00",
+  "alwaysOpenNewPane": true,
+  "periodicNotes": {
+    "day": {
+      "customizeBackground": false
+    },
+    "week": {
+      "customizeBackground": false
+    }
+  },
+  "appendLineTargetHeader": "### today",
+  "appendLinePrefix": "- "
+}
