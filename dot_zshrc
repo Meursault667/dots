@@ -169,18 +169,5 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 
 export FZF_BASE=/usr/share/fzf
 
-# Created by `pipx` on 2024-02-17 12:38:10
-export PATH="$PATH:/home/usr/.local/bin"
-
-# PATH Example
-export PATH="$HOME/.local/bin:\
-$HOME/.cargo/bin:\
-$HOME/.npm-global/bin:\
-$HOME/.yarn/bin:\
-$HOME/.config/yarn/global/node_modules/.bin:\
-$HOME/.local/share/gem/ruby/3.0.0/bin:\
-$HOME/.cargo/env:\
-/root/.local/share/gem/ruby/3.0.0/bin:\
-/usr/local/bin:\
-/usr/share/nvm/init-nvm.sh:\
-$PATH"
+eval 
+EGGS_AC_ZSH_SETUP_PATH=/home/usr/.cache/penguins-eggs/autocomplete/zsh_setup && test -f $EGGS_AC_ZSH_SETUP_PATH && source $EGGS_AC_ZSH_SETUP_PATH; # eggs autocomplete setup
