@@ -146,6 +146,12 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 # Github clone
 alias gh_clone="gh repo clone "
 
+# Ounce
+alias vim=\"ounce --trace vim\"
+alias vi=\"ounce --trace vi\"
+alias nvim=\"ounce --trace nvim\"
+
+
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Fish-like syntax highlighting and autosuggestions
