@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Enable Wayland support for different applications
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export WAYLAND=1
@@ -19,57 +12,31 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     export ELM_ENGINE=wayland_egl
 fi
 
-# BROWSER for zsh 
-export BROWSER=w3m
-alias b='buku --suggest'
 
-# Path to your oh-my-zsh installation.
-export ZSH="/usr/share/oh-my-zsh"
+# if [ -z "$TMUX" ]
+# then
+#     tmux attach -t ${USER} || tmux new -s ${USER}
+# fi
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-DISABLE_MAGIC_FUNCTIONS="true"
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf extract)
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Ignore commands that start with spaces and duplicates.
-
 export HISTCONTROL=ignoreboth
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Don't add certain commands to the history file.
-
 export HISTIGNORE="&:[bf]g:c:clear:history:exit:q:pwd:* --help"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Use custom `less` colors for `man` pages.
-
 export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
 export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history.
-
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 #------
@@ -79,13 +46,13 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 BLK="0B" CHR="0B" DIR="04" EXE="06" REG="00" HARDLINK="06" SYMLINK="06" MISSING="00" ORPHAN="09" FIFO="06" SOCK="0B" OTHER="06"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 
-export NNN_OPENER='/usr/share/nnn/plugins/nuke'
-export NNN_PLUG='x:!chmod +x "$nnn";m:nmount;P:pdfview;E:-!sudo -E nvim "$nnn"*;e:-!nvim "$nnn"*;C:!cp -rv "$nnn" "$nnn".cp;u:upload;B:bulknew;D:dragdrop;O:launch;p:preview-tui;f:fzopen'
 export LC_COLLATE='C'
-export NNN_FIFO='/home/usr/.config/nnn/nnn.fifo'
-export NNN_BMS="d:$HOME/docs;c:$HOME/.config;s:$HOME/docs/4_STUDYS/;S:$HOME/docs/8_RESSOURCES/81_Studys/"
+#export NNN_FIFO='/home/usr/.config/nnn/nnn.fifo'
+export NNN_PLUG='x:!chmod u+x "$nnn";m:nmount;P:pdfview;E:-!sudo -E -s nvim "$nnn"*;e:-!nvim "$nnn"*;C:!cp -rv "$nnn" "$nnn".cp;B:bulknew;D:dragdrop;O:launch;p:preview-tui;f:fzopen'
+export NNN_BMS="d:$HOME/01_docs;c:$HOME/.config;s:$HOME/00__SHORTCUTS/;m:/run/media"
+export NNN_ARCHIVE="\\.(7z|bz|bz2|deb|gz|iso|rar|rpm|tar|tbz|tbz2|tgz|txz|xz|Z|zip)$"
 
-n ()
+nn()
 {
     # Block nesting of nnn in subshells
     [ "${NNNLVL:-0}" -eq 0 ] || {
@@ -97,8 +64,8 @@ n ()
     # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
     # see. To cd on quit only on ^G, remove the "export" and make sure not to
     # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
-          NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-    #export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    #      NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 
     # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
     # stty start undef
@@ -112,16 +79,43 @@ n ()
 
     [ ! -f "$NNN_TMPFILE" ] || {
         . "$NNN_TMPFILE"
-        rm -f "$NNN_TMPFILE" > /dev/null
+        rm -f -- "$NNN_TMPFILE" > /dev/null
     }
 }
 
-alias obsidian="flatpak run md.obsidian.Obsidian"
+nnn_cd()                                                                                                   
+{
+  if ! [ -z "$nnn_pipe" ]; then
+    printf "%s\0" "0c${pwd}" > "${nnn_pipe}" !&
+  fi  
+}
 
-alias n="n -xca"
-#alias ls="nnn -de"
+trap nnn_cd EXIT
+
+alias n="nn -xca"
 alias N="sudo -E nnn -dHexc"
 
+
+#-< nvim >---
+alias v="nvim"
+alias V="sudoedit"
+
+#-< tmux >---
+alias t="tmux"
+alias tn="tmux new -t ${USER}"
+alias tns="tmux new -d -t ${USER} && tmux neww && ta"
+
+#-<docker | PODMAN >--
+export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+alias docker-compose="podman-compose"
+# alias docker="sudo docker"
+# alias dockcross-linux-mips="sudo dockcross-linux-mips"
+# alias docker-compose="sudo docker-compose"
+# alias lazydocker="sudo lazydocker"
+
+#-< ufw >---
+alias ufw="sudo ufw"
+alias tufw="sudo tufw"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -129,13 +123,15 @@ alias N="sudo -E nnn -dHexc"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 #alias open="xdg-open"
+alias odoo="cd /home/usr/odoo-one && sudo docker-compose up"
 alias q="exit"
 alias cleanch="sudo pacman -Scc"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+
 # Cleanup orphaned packages
 alias cleanup="sudo pacman -Rsn (pacman -Qtdq)"
-
-alias conf="chezmoi cd & n"
+alias mirror_sync="sudo systemctl start reflector.service && sudo cachyos-rate-mirrors"
+alias conf="chezmoi cd | nnn -"
 
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
@@ -145,32 +141,116 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 # Github clone
 alias gh_clone="gh repo clone "
+alias ghs="gh search repos | nvimpager -p"
+alias ghv="gh repo view"
 
-# Ounce
+# export PAGER=nvimpager
+# VimPager
+alias less=$PAGER
+export MANPAGER='nvim +Man!'
+#alias zless=$PAGER
+
+# w3m | surfraw
+alias sr="sr -browser=w3m "
+alias surfraw="surfraw -browser=zen-browser"
+alias s="kitty --detach sr whoogle"
+alias w3m="kitty --detach -e w3m"
 
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# Playing Workers & ressources
+alias communism="gamemoderun gamescope --expose-wayland --force-grab-cursor --backend=sdl -h 720 -H 900 -F fsr -e -- /usr/bin/steam-native -silent -applaunch 784150"
+# h = 720, 768, 900
+# ENABLE_VKBASALT=1 
+# -noverifyfiles
+# -r 30 
+# eval $(echo "%command%" | sed "s/SETUPAPPLICATION SOVIET\.exe/SOVIET64\.exe/")
 
+# DontStarveTogether
+alias huuuuuunger="gamemoderun gamescope --expose-wayland -h 900 -H 1080 -F fsr -r 60 -e -- /usr/bin/steam-native -applaunch 322330"
+
+# Snapshot to backup
+alias backup_ZFS="sudo syncoid -r --no-sync-snap --create-bookmark --use-hold --no-stream zpcachyos zbackup"
+
+
+# (oh-my)-ZSH =====================================================
+
+ZSH=/usr/share/oh-my-zsh/
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+
+plugins=(
+  git
+  fzf
+  gh
+  zsh-vi-mode
+  chezmoi
+  podman
+  rclone
+  sudo
+  tmux
+  z
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-fzf-history-search
+)
+
+#--------------------------------------------------- zsh vim mode 
+# README: /usr/share/oh-my-zsh/plugins/vi-mode/README.md
+VI_MODE_SET_CURSOR=true
+
+#--------------------------------------------------- fzf 
+# README: /usr/share/oh-my-zsh/plugins/fzf/README.md
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
+
+## deprecate: 
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+#plugins=(git fzf extract tmux zsh-fzf-history-search)
+#source $ZSH/oh-my-zsh.sh
 # Fish-like syntax highlighting and autosuggestions
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # vi mode
-source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
+# source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+#source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # pkgfile "command not found" handler
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
-# Rofi
-export PATH=$HOME/.config/rofi/scripts:$PATH
+# ZSH Theme ==========================================================
+. ~/.git-prompt.sh
+setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+autoload -Uz promptinit
+promptinit
+prompt igloo
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export FZF_BASE=/usr/share/fzf
-
+# EGGS ====================================================
 eval 
 EGGS_AC_ZSH_SETUP_PATH=/home/usr/.cache/penguins-eggs/autocomplete/zsh_setup && test -f $EGGS_AC_ZSH_SETUP_PATH && source $EGGS_AC_ZSH_SETUP_PATH; # eggs autocomplete setup
+
+
+# HTTM =====================================================
+# httm: zsh hot keys script
+source ~/.httm-key-bindings.zsh
+export HTTM_RESTORE_MODE="guard"
+
+
+# PATH -----------------------------------------------------
+export PATH=${PATH}:/home/usr/.cargo/bin
+export PATH=/usr/bin:$PATH
+export PATH=$HOME/.config/rofi/scripts:$PATH
+export PATH="$PATH:/home/usr/.local/bin"
+
