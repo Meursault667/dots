@@ -1,0 +1,16 @@
+ui_font         iA Writer Quattro S
+custom_background_color       0.18 0.20 0.25
+custom_test_color             1.0 1.0 1.0
+status_bar_color        0 0 0
+status_bar_text_color   1 1 1
+status_bar_font_size    10
+startup_commands             toggle_custom_color;toggle_visual_scr
+search_highlight_color
+link_highlight_color
+synctex_highlight_color
+visual_mark_color  1.0  0.0  0.0  0.1
+text_highlight_color
+dark_mode_background_color
+dark_mode_contrast
+background_color
+
