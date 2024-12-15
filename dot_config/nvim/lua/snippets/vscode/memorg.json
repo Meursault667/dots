@@ -1,0 +1,112 @@
+{
+  "Memo Org Process": {
+    "prefix": ["mP"],
+    "body": [
+      "\\mP[${1:unspecified,manual,automated,computersupported,decomposition,external}][${2:OrgUnit}][${3:desc}];",
+      "$0"
+    ],
+    "description": "Process: unspecified, manual, automated, computersupported, decomposition, external"
+  },
+  "Memo Org Event": {
+    "prefix": ["mE"],
+    "body": [
+      "\\mE[${1:empty,start,end,message,informationchange,time,pointintime,timespan,new,modified,canceled,software, publishsoftware,pollsoftware}][${2:desc}];",
+      "$0"
+    ],
+    "description": "Event: empty, start, end, message, informationchange, time, pointintime, timespan, new, modified, canceled, software, publishsoftware, pollsoftware"
+  },
+  "Memo Org Decision Tree 3": {
+    "prefix": ["mdt3"],
+    "body": [
+      "%-| BEGIN DECISION |----------------",
+      "\\begin{decision}",
+      "%-< DR-I >-------------------------",
+      "\t\\begin{decrow}[above right][$1]",
+      "\t\t$2",
+      "\t\\end{decrow}",
+      "%-< DR-II >------------------------",
+      "\t\\begin{decrow}[right][$3]",
+      "\t\t$4",
+      "\t\\end{decrow}",
+      "%-< DR-III >-----------------------",
+      "\t\\begin{decrow}[below right][$5]",
+      "\t\t$6",
+      "\t\\end{decrow}",
+      "\\end{decision}",
+      "\\mDecClose[${6:event}][][][][][${5:description}][];",
+      "\\mDecMerge[$7][$8];",
+      "$0"
+    ],
+    "description": "decision tree"
+  },
+  "Memo Org Decision Tree 2": {
+    "prefix": ["mdt2"],
+    "body": [
+      "%-| BEGIN DECISION |-------------------------",
+      "\\begin{decision}",
+      "%-< DR-I >-------------------------",
+      "\t\\begin{decrow}[${1:above right}][$2]",
+      "\t\t$3",
+      "\t\\end{decrow}",
+      "%-< DR-II >-------------------------",
+      "\t\\begin{decrow}[${4:below right}][$5]",
+      "\t\t$5",
+      "\t\\end{decrow}",
+      "\\end{decision}",
+      "\\mDecClose[${6:event}][][][][][${7:description}][];",
+      "\\mDecMerge[$8][$9];",
+      "$0"
+    ],
+    "description": "decision tree"
+  },
+  "Memo Start Document": {
+    "prefix": ["\\mdoc", "mdoc"],
+    "body": [
+      "\\documentclass{pagelayout}",
+      "",
+      "\\usepackage{memorg}",
+      "",
+      "\\pagewidth=${1:420mm}",
+      "\\pageheight=${2:297mm}",
+      "${3:%}\\graphpaper",
+      "${3:%}\\grid",
+      "",
+      "\\begin{document}",
+      "\t$0",
+      "\\end{document}"
+    ],
+    "description": "Start a new Document with Memo-Package"
+  },
+  "Memo Start Page": {
+    "prefix": ["\\mpag", "mpag"],
+    "body": [
+      "%-| BEGIN PAGE |-------------------------",
+      "\\page[",
+      "  inner margin=${1:30}mm,",
+      "  outer margin=${1:30}mm,",
+      "  top margin=${2:20}mm,",
+      "  bottom margin=${3:30}mm,]",
+      "{",
+      "  \\setgrid{",
+      "    {{}",
+      "      %{}",
+      "    }",
+      "    %{{}}",
+      "  }",
+      "  \\tikzgraphic{",
+      "    \\confNodeDistances[${4:25mm}][${5:30mm}][][];",
+      "    %\\getConfNode;",
+      "    \\begin{mEnvironment}",
+      "      \\begin{firstROW}[$6]",
+      "           $7",
+      "      \\end{firstROW}",
+      "       $8",
+      "    \\end{mEnvironment}",
+      "    ",
+      "  }",
+      "}",
+      "$9"
+    ],
+    "description": "complete page for memorg diagramm"
+  }
+}

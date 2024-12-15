@@ -1,0 +1,40 @@
+{
+  "TemplateSnippet": {
+    "prefix": [
+      "snip"
+    ],
+    "body": [
+      "\"$1\": {",
+      "\t\"prefix\": [\"$2\"$3],",
+      "\t\"body\": [",
+      "\t\t\"$4\"$5",
+      "\t],",
+      "\t\"description\": \"${6:description}\"",
+      "},",
+      "$0"
+    ],
+    "description": "A Template for making Templates (VS-Code Scheme)"
+  },
+  "LazyPluginInstall": {
+    "prefix": [
+      "LazyPluginInstall"
+    ],
+    "body": [
+      "return {",
+      "\t$1",
+      "}",
+      "$0"
+    ],
+    "description": "for plugin configuration (lazy)"
+  },
+  "Disable Markdown Lint": {
+    "prefix": [
+      "mdlintdisable"
+    ],
+    "body": [
+      "<!-- markdownlint-disable -->",
+      "$0"
+    ],
+    "description": "disable markdownlint"
+  },
+}

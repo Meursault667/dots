@@ -1,0 +1,47 @@
+{
+  "name": "snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "tex",
+          "markdown"
+        ],
+        "path": "./memorg.json"
+      },
+      {
+        "language": [
+          "all",
+          "markdown",
+          "tex"
+        ],
+        "path": "./all.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./markdown.json"
+      },
+      {
+        "language": [
+          "json"
+        ],
+        "path": "./json.json"
+      },
+      {
+        "language": [
+          "lua"
+        ],
+        "path": "./lua.json"
+      },
+      {
+        "language": [
+          "asm",
+          "mips"
+        ],
+        "path": "./mips.json"
+      }
+    ]
+  }
+}

@@ -4,10 +4,12 @@
 
 local o = vim.opt
 
-o.spell = false
+-- o.spell = false
 o.clipboard = "unnamedplus"
 --o.foldmethod = "indent"
 o.conceallevel = 0
 vim.diagnostic.enable(false)
-vim.g.autoformat = false
-
+-- vim.lsp.set_log_level("ERROR")
+-- vim.g.autoformat = true
+-- o.textwidth = 80
+vim.api.nvim_create_autocmd("FileType", { pattern = "markdown", command = "set awa" })

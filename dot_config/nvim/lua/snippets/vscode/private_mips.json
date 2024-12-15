@@ -1,0 +1,225 @@
+{
+  "lb": {
+    "prefix": "lb",
+    "body": ["lb ${1:register}, ${2:address}"],
+    "description": "Laden eines Bytes (signed)"
+  },
+  "lbu": {
+    "prefix": "lbu",
+    "body": ["lbu ${1:register}, ${2:address}"],
+    "description": "Laden eines Bytes (unsigned)"
+  },
+  "sb": {
+    "prefix": "sb",
+    "body": ["sb ${1:register}, ${2:address}"],
+    "description": "Speichern eines Bytes"
+  },
+  "lh": {
+    "prefix": "lh",
+    "body": ["lh ${1:register}, ${2:address}"],
+    "description": "Laden eines Halbwortes (signed)"
+  },
+  "lhu": {
+    "prefix": "lhu",
+    "body": ["lhu ${1:register}, ${2:address}"],
+    "description": "Laden eines Halbwortes (unsigned)"
+  },
+  "sh": {
+    "prefix": "sh",
+    "body": ["sh ${1:register}, ${2:address}"],
+    "description": "Speichern eines Halbwortes"
+  },
+  "lw": {
+    "prefix": "lw",
+    "body": ["lw ${1:register}, ${2:address}"],
+    "description": "Laden eines Wortes"
+  },
+  "sw": {
+    "prefix": "sw",
+    "body": ["sw ${1:register}, ${2:address}"],
+    "description": "Speichern eines Wortes"
+  },
+  "la": {
+    "prefix": "la",
+    "body": ["la ${1:register}, ${2:address}"],
+    "description": "Laden einer Adresse"
+  },
+  "li": {
+    "prefix": "li",
+    "body": ["li ${1:register}, ${2:immediate}"],
+    "description": "Laden eines Immediate-Werts"
+  },
+  "move": {
+    "prefix": "move",
+    "body": ["move ${1:dest}, ${2:src}"],
+    "description": "Transfer zwischen Universalregistern"
+  },
+  "add": {
+    "prefix": "add",
+    "body": ["add ${1:dest}, ${2:src1}, ${3:src2}"],
+    "description": "Addition"
+  },
+  "sub": {
+    "prefix": "sub",
+    "body": ["sub ${1:dest}, ${2:src1}, ${3:src2}"],
+    "description": "Subtraktion"
+  },
+  "mult": {
+    "prefix": "mult",
+    "body": ["mult ${1:src1}, ${2:src2}"],
+    "description": "Multiplikation (Speicherung in Hi und Lo)"
+  },
+  "div": {
+    "prefix": "div",
+    "body": ["div ${1:src1}, ${2:src2}"],
+    "description": "Division (Speicherung in Hi und Lo)"
+  },
+  "and": {
+    "prefix": "and",
+    "body": ["and ${1:dest}, ${2:src1}, ${3:src2}"],
+    "description": "Logische UND-Verknüpfung"
+  },
+  "or": {
+    "prefix": "or",
+    "body": ["or ${1:dest}, ${2:src1}, ${3:src2}"],
+    "description": "Logische ODER-Verknüpfung"
+  },
+  "xor": {
+    "prefix": "xor",
+    "body": ["xor ${1:dest}, ${2:src1}, ${3:src2}"],
+    "description": "Logische XOR-Verknüpfung"
+  },
+  "nor": {
+    "prefix": "nor",
+    "body": ["nor ${1:dest}, ${2:src1}, ${3:src2}"],
+    "description": "Logische NOR-Verknüpfung"
+  },
+  "slt": {
+    "prefix": "slt",
+    "body": ["slt ${1:dest}, ${2:src1}, ${3:src2}"],
+    "description": "Vergleich kleiner"
+  },
+  "sltu": {
+    "prefix": "sltu",
+    "body": ["sltu ${1:dest}, ${2:src1}, ${3:src2}"],
+    "description": "Vergleich kleiner (unsigned)"
+  },
+  "j": {
+    "prefix": "j",
+    "body": ["j ${1:address}"],
+    "description": "Unbedingter Sprung"
+  },
+  "jal": {
+    "prefix": "jal",
+    "body": ["jal ${1:address}"],
+    "description": "\"Jump\" mit Speicherung von PC+4 im Register $ra"
+  },
+  "jr": {
+    "prefix": "jr",
+    "body": ["jr ${1:register}"],
+    "description": "\"Jump Register\" mit Speicherung von PC+4 im Register $ra"
+  },
+  "beq": {
+    "prefix": "beq",
+    "body": ["beq ${1:src1}, ${2:src2}, ${3:label}"],
+    "description": "Verzweigung, falls Register gleich"
+  },
+  "bne": {
+    "prefix": "bne",
+    "body": ["bne ${1:src1}, ${2:src2}, ${3:label}"],
+    "description": "Verzweigung, falls Register ungleich"
+  },
+  "bgtz": {
+    "prefix": "bgtz",
+    "body": ["bgtz ${1:register}, ${2:label}"],
+    "description": "Verzweigung, falls Register größer 0"
+  },
+  "bltz": {
+    "prefix": "bltz",
+    "body": ["bltz ${1:register}, ${2:label}"],
+    "description": "Verzweigung, falls Register kleiner 0"
+  },
+  "nop": {
+    "prefix": "nop",
+    "body": ["nop"],
+    "description": "Nulloperation bzw. Leere Anweisung"
+  },
+  "data_section": {
+    "prefix": ".data",
+    "body": [".data"],
+    "description": "Start of the data section for variables and constants"
+  },
+  "text_section": {
+    "prefix": ".text",
+    "body": [".text"],
+    "description": "Start of the text section for code"
+  },
+  "main_label": {
+    "prefix": "main",
+    "body": [".text", ".globl main", "main:"],
+    "description": "Main function setup"
+  },
+  "syscall": {
+    "prefix": "syscall",
+    "body": ["li $v0, ${1:code}", "syscall"],
+    "description": "System call with code in $v0 register"
+  },
+  "print_int": {
+    "prefix": "print_int",
+    "body": ["li $v0, 1", "move $a0, ${1:register}", "syscall"],
+    "description": "Print an integer stored in a register"
+  },
+  "print_string": {
+    "prefix": "print_string",
+    "body": ["li $v0, 4", "la $a0, ${1:label}", "syscall"],
+    "description": "Print a string from memory"
+  },
+  "exit": {
+    "prefix": "exit",
+    "body": ["li $v0, 10", "syscall"],
+    "description": "Exit program"
+  },
+  "string_declaration": {
+    "prefix": "str",
+    "body": ["${1:label}: .asciiz \"${2:Your string here}\""],
+    "description": "Define a null-terminated string in the data section"
+  },
+  "integer_declaration": {
+    "prefix": "int",
+    "body": ["${1:label}: .word ${2:value}"],
+    "description": "Define an integer variable in the data section"
+  },
+  "array_declaration": {
+    "prefix": "array",
+    "body": [
+      "${1:label}: .word ${2:value1}, ${3:value2}, ${4:value3}  # Define an array of integers"
+    ],
+    "description": "Define an array of integers in the data section"
+  },
+  "loop": {
+    "prefix": "loop",
+    "body": [
+      "${1:loop_label}:",
+      "${2:instruction} ${3:register}, ${4:label}",
+      "bne ${3:register}, ${5:end_label}",
+      "j ${1:loop_label}",
+      "${5:end_label}:"
+    ],
+    "description": "Basic loop structure"
+  },
+  "if_statement": {
+    "prefix": "if",
+    "body": [
+      "${1:if_label}:",
+      "beq ${2:register1}, ${3:register2}, ${4:true_label}",
+      "j ${5:false_label}",
+      "${4:true_label}:",
+      "${6:# True block}",
+      "j ${7:end_label}",
+      "${5:false_label}:",
+      "${8:# False block}",
+      "${7:end_label}:"
+    ],
+    "description": "Basic if statement structure"
+  }
+}
